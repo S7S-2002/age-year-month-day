@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        #div1{
+            background-color:blue;
+            width: auto;
+            height: auto;
+        }
+        .nam{
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+        button{
+            margin-left: 100px;
+            background-color:aquamarine
+        }
+        .dat{
+            width: 50px;
+            margin-left: 50px;
+        }
+        .mon{
+            width: 50px;
+        }
+        .yea{
+            width: 50px;
+        }
+        #wel{
+            text-align: center;
+            color: azure;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <h2 id="wel">welcome sier</h2>
+        <input type="text" class="nam" placeholder="name"><br><br><br>
+        <input type="number" class="dat" placeholder="day">
+        <input type="number" class="mon" placeholder="month" >
+        <input type="number" class="yea" placeholder="year">
+        <br><br><br><button id="click">click here</button>
+        <br><br>
+    </div>
+    <div id="result"><h2 id="resu"></h2></div><br>
+    <script>
+        var btn=document.getElementById("click")
+        
+        var res=document.getElementById("result")
+        btn.onclick=function getDateValue(){
+        var nam=document.querySelector(".nam").value;
+        var dat=document.querySelector(".dat").value;
+        var mon=document.querySelector(".mon").value;
+        var yea=document.querySelector(".yea").value;
+
+            var x=new Date()
+            var d=x.getDate()
+            var m=x.getMonth()+1
+            var y=x.getFullYear()
+
+            var month=m-mon
+            var date=d-dat
+
+        if(month<0 ){
+                var month=month*-1
+            }
+            else if(date<0){
+                var date=date*-1
+            }
+        if(nam!="" &&dat!==0 &&mon!=0 &&yea!=0){
+            resu.innerHTML=(`welcome MR.${nam} you have ${y-yea} years old ,and ${month} month ,and ${d} date`)
+            }
+        }
+
+    </script>
+</body>
+</html>
